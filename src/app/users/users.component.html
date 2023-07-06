@@ -1,9 +1,13 @@
 <div class="list">
 
-  <mat-card *ngFor="let user of users$ | async">
+  <span *ngFor="let user of users$ | async">
 
     <h3>{{user.username}}</h3>
 
-  </mat-card>
+    <div class="spacer"></div>
+
+    <button mat-icon-button color="primary"><mat-icon>add</mat-icon></button>
+
+  </span>
 
 </div>

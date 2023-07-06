@@ -5,10 +5,22 @@
   flex-direction: column;
   gap: 1vh;
   gap: 1dvh;
+  width: 100%;
 }
 
-mat-card {
-  width: 100%;
+span{
+  width: 95vw;
   height: 5vh;
   height: 5dvh;
+  box-sizing: border-box;
+  padding:0 2vw;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2vw;
+}
+
+.spacer{
+  flex: 1;
 }
