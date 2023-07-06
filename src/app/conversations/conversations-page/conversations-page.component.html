@@ -1,1 +1,12 @@
 <h1>Hello</h1>
+
+<div class="form">
+
+  <mat-form-field>
+    <input matInput [(ngModel)]="newMessage.content">
+  </mat-form-field>
+
+  <button mat-icon-button (click)="postMessage()"> <mat-icon>add</mat-icon>
+  </button>
+
+</div>

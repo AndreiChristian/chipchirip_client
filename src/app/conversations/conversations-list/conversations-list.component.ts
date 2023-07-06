@@ -21,11 +21,11 @@ export class ConversationsListComponent implements OnInit, OnDestroy {
   userId: number;
 
   ngOnInit(): void {
-    this.userId = this.authService.getId();
-    this.loading$ = this.conversationsService.loading$;
-    this.subscription = this.conversationsService.getUserConversations();
-    this.conversations$ = this.conversationsService.conversationList$;
-    this.conversations$.subscribe((data) => console.log(data));
+    // this.userId = this.authService.getId();
+    // this.loading$ = this.conversationsService.loading$;
+    // this.subscription = this.conversationsService.getUserConversations();
+    // this.conversations$ = this.conversationsService.conversationList$;
+
   }
 
   ngOnDestroy(): void {

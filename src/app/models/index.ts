@@ -1,16 +1,17 @@
 export interface User {
   id?: number;
-  username: string;
+  username?: string;
   password?: string;
   password_hash?: string;
-  email: string;
+  email?: string;
   created_at?: Date;
 }
 
 export interface Message {
-  id?: string;
+  id?: number;
   sender_id: string;
-  conversation_id: string | null;
+  conversation_id: number | null;
+  group_id: number | null;
   content: string;
   created_at?: Date;
 }
