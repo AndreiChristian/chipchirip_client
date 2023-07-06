@@ -15,10 +15,11 @@ import { ConversationsListComponent } from './conversations/conversations-list/c
 import { ConversationsCardComponent } from './conversations/conversations-card/conversations-card.component';
 import { GroupCardComponent } from './group/group-card/group-card.component';
 import { GroupListComponent } from './group/group-list/group-list.component';
+import { ConversationsPageComponent } from './conversations/conversations-page/conversations-page.component';
 
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent, LoginComponent, SignupComponent, UsersComponent, ConversationsListComponent, ConversationsCardComponent, GroupCardComponent, GroupListComponent],
+  declarations: [AppComponent, NavigationComponent, LoginComponent, SignupComponent, UsersComponent, ConversationsListComponent, ConversationsCardComponent, GroupCardComponent, GroupListComponent, ConversationsPageComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

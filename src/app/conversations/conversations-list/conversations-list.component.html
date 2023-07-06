@@ -1,1 +1,15 @@
-<span>hello</span>
+<mat-progress-spinner *ngIf="(loading$|async) === true" color="primary"></mat-progress-spinner>
+
+<div class="list" *ngIf="!(loading$|async)">
+
+  <h3>Conversations</h3>
+
+  <div [routerLink]="['/conversations',c.id]" routerLinkActive="active"
+    *ngFor="let c of conversations$ | async; index as i">
+
+    <h4 *ngIf=" c.user_1_id !== userId ">{{c.user_1}}</h4>
+    <h4 *ngIf=" c.user_2_id !== userId ">{{c.user_2}}</h4>
+
+  </div>
+
+</div>

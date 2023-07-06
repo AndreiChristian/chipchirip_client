@@ -29,8 +29,8 @@ export class UsersComponent implements OnInit {
 
   createNewConversation(user_2: number) {
     const newConversation: DirectConversation = {
-      user_1: this.authService.getId(),
-      user_2: user_2,
+      user_1_id: this.authService.getId(),
+      user_2_id: user_2,
     };
 
     this.http
