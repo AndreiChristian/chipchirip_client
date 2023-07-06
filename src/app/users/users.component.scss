@@ -1,0 +1,14 @@
+.list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1vh;
+  gap: 1dvh;
+}
+
+mat-card {
+  width: 100%;
+  height: 5vh;
+  height: 5dvh;
+}
