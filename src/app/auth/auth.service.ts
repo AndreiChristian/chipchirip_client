@@ -4,6 +4,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class AuthService {
+  id = 8;
+
+  getId() {
+    return this.id;
+  }
+
   constructor() {}
 
   login() {}

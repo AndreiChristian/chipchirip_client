@@ -29,7 +29,9 @@ export interface Group {
 
 export interface DirectConversation {
   id?: string;
-  user_1: string;
-  user_2: string;
+  user_1: number;
+  user_2: number;
+  username_1?:string;
+  username_2?:string
 }
 

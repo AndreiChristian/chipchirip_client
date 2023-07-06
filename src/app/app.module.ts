@@ -11,10 +11,14 @@ import { MaterialModule } from './material.module';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { UsersComponent } from './users/users.component';
+import { ConversationsListComponent } from './conversations/conversations-list/conversations-list.component';
+import { ConversationsCardComponent } from './conversations/conversations-card/conversations-card.component';
+import { GroupCardComponent } from './group/group-card/group-card.component';
+import { GroupListComponent } from './group/group-list/group-list.component';
 
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent, LoginComponent, SignupComponent, UsersComponent],
+  declarations: [AppComponent, NavigationComponent, LoginComponent, SignupComponent, UsersComponent, ConversationsListComponent, ConversationsCardComponent, GroupCardComponent, GroupListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
