@@ -19,10 +19,11 @@ import { ConversationsPageComponent } from './conversations/conversations-page/c
 import { HomeComponent } from './home/home.component';
 import { ChatComponent } from './chat/chat.component';
 import { GeneralNavigationComponent } from './UI/general-navigation/general-navigation.component';
+import { NavbarComponent } from './UI/navbar/navbar.component';
 
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent, LoginComponent, SignupComponent, UsersComponent, ConversationsListComponent, ConversationsCardComponent, GroupCardComponent, GroupListComponent, ConversationsPageComponent, HomeComponent, ChatComponent, GeneralNavigationComponent],
+  declarations: [AppComponent, NavigationComponent, LoginComponent, SignupComponent, UsersComponent, ConversationsListComponent, ConversationsCardComponent, GroupCardComponent, GroupListComponent, ConversationsPageComponent, HomeComponent, ChatComponent, GeneralNavigationComponent, NavbarComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
