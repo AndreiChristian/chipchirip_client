@@ -27,11 +27,15 @@
 </nav>
 
 <mat-menu #menu="matMenu">
-  <button mat-menu-item disabled>
-    <span> {{(user$ | async).username}}</span>
-  </button>
-  <button mat-menu-item>
-    <mat-icon>mail</mat-icon>
-    <span>{{(user$ | async).email}}</span>
-  </button>
+  <ng-template *ngIf="(isAuthtenticated | async)">
+
+    <button mat-menu-item disabled>
+      <span> {{(user$ | async).username}}</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon>mail</mat-icon>
+      <span>{{(user$ | async).email}}</span>
+    </button>
+  </ng-template>
+
 </mat-menu>

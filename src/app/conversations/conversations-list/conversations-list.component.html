@@ -4,7 +4,7 @@
 
   <h3>Conversations</h3>
 
-  <div [routerLink]="['/conversations',c.id]" routerLinkActive="active" class="item"
+  <div [routerLink]="['/chat','conversations',c.id]" routerLinkActive="active" class="item"
     *ngFor="let c of conversations$ | async; index as i">
 
     <h4 *ngIf=" c.user_1_id !== userId ">{{c.user_1}}</h4>

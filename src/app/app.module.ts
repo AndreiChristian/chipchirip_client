@@ -16,21 +16,37 @@ import { ConversationsCardComponent } from './conversations/conversations-card/c
 import { GroupCardComponent } from './group/group-card/group-card.component';
 import { GroupListComponent } from './group/group-list/group-list.component';
 import { ConversationsPageComponent } from './conversations/conversations-page/conversations-page.component';
-import { HomeComponent } from './home/home.component';
+
 import { ChatComponent } from './chat/chat.component';
 import { GeneralNavigationComponent } from './UI/general-navigation/general-navigation.component';
 import { NavbarComponent } from './UI/navbar/navbar.component';
-
+import { HomeModule } from './home/home.module';
 
 @NgModule({
-  declarations: [AppComponent, NavigationComponent, LoginComponent, SignupComponent, UsersComponent, ConversationsListComponent, ConversationsCardComponent, GroupCardComponent, GroupListComponent, ConversationsPageComponent, HomeComponent, ChatComponent, GeneralNavigationComponent, NavbarComponent],
+  declarations: [
+    AppComponent,
+    NavigationComponent,
+    LoginComponent,
+    SignupComponent,
+    UsersComponent,
+    ConversationsListComponent,
+    ConversationsCardComponent,
+    GroupCardComponent,
+    GroupListComponent,
+    ConversationsPageComponent,
+
+    ChatComponent,
+    GeneralNavigationComponent,
+    NavbarComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    HomeModule
   ],
   providers: [MaterialModule],
   bootstrap: [AppComponent],
