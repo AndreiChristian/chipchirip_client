@@ -1,1 +1,39 @@
-<p>general-navigation works!</p>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <h1>Hello</h1>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+    <mat-toolbar>
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>chipchirip_client</span>
+      <span style="flex: 1;"></span>
+      <button mat-button color="primary" routerLink="/users"
+        *ngIf="(isAuthtenticated | async)">Users</button>
+
+      <button mat-stroked-button *ngIf="!(isAuthtenticated | async)"
+        color="primary" routerLink="/login">Login</button>
+
+      <button mat-raised-button *ngIf="!(isAuthtenticated | async)"
+        color="primary" routerLink="/signup">Signup</button>
+      <button mat-raised-button color="primary"
+        *ngIf="(isAuthtenticated | async)" (click)="logout()">Logout</button>
+
+    </mat-toolbar>
+
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

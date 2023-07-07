@@ -2,8 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'environments/environment';
 import { User } from '../models';
-import { BehaviorSubject, Observable, tap } from 'rxjs';
+import { BehaviorSubject, Observable, map, tap } from 'rxjs';
 import { LocalStorageService } from '../services/local-storage.service';
+import { Router } from '@angular/router';
 
 export interface AuthReponse {
   auth: boolean;
@@ -17,7 +18,8 @@ export interface AuthReponse {
 export class AuthService {
   constructor(
     private http: HttpClient,
-    private localStorage: LocalStorageService
+    private localStorage: LocalStorageService,
+    private router: Router
   ) {}
 
   private UserSubject = new BehaviorSubject<User | null>(
@@ -47,22 +49,26 @@ export class AuthService {
             this.localStorage.set('token', value.token);
             this.localStorage.set('user', value.user);
             this.UserSubject.next(value.user);
+
+            this.router.navigate(['/chat']);
           }
         },
       });
   }
 
-  isAuthenticated(): boolean {
-    if (this.UserSubject.getValue()) {
-      return true;
-    } else {
-      return false;
-    }
-  }
+  isAuthenticated: Observable<boolean> = this.UserSubject.pipe(
+    map((user) => !!user)
+  );
 
   logUser() {
     console.log(this.UserSubject.getValue());
   }
 
   register() {}
+
+  logout() {
+    this.UserSubject.next(null);
+    this.localStorage.delete('user');
+    this.router.navigate(['/']);
+  }
 }
